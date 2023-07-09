@@ -7,9 +7,8 @@ export function Calculadora() {
         <div className={styles.container}>
             <div className={styles.content}>
                 <main className={styles.main}>
-                    <h1>Calculadora</h1>
-                    <Button />
                     <Display />
+                    <Button />
                 </main>
             </div>
         </div>

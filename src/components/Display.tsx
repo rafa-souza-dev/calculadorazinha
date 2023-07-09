@@ -1,5 +1,9 @@
+import styles from './Display.module.css';
+
 export function Display() {
     return (
-        <h1>Display</h1>
+        <div className={styles.container}>
+            <span>100</span>
+        </div>
     )
 }

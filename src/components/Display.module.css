@@ -1,0 +1,20 @@
+.container {
+    height: 120px;
+    width: 100%;
+    background-color: var(--white-500);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    overflow: auto;
+    white-space: nowrap;
+}
+
+span {
+    color: var(--black-800);
+    font-size: 100px;
+    font-weight: bold;
+
+    text-align: center;
+}
