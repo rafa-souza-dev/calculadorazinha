@@ -1,0 +1,24 @@
+:root {
+    --black-500: #141414;
+    --black-800: #090909;
+
+    --white: #ffffff;
+    --white-500: #E8EAD8;
+
+    --orange-500: #FC8827;
+
+    --silver: #7F878C;
+    --brass: #756053;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black-500);
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
