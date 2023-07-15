@@ -1,0 +1,37 @@
+.button {
+    min-width: 5rem;
+    height: 53.74;
+    border-radius: 10px;
+    background-color: var(--black-500);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button span {
+    font-size: 30px;
+    color: var(--white);
+}
+
+.variantBlack {
+    background-color: var(--black-500);
+}
+
+.variantSilver {
+    background-color: var(--silver);
+}
+
+.variantBrass {
+    background-color: var(--brass);
+}
+
+.variantOrange {
+    background-color: var(--orange-500);
+}
