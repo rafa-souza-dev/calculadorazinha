@@ -1,143 +1,148 @@
-import { variant } from "./@types/types";
-
-interface ButtonCalculator {
-    id: number;
-    slug: string;
-    variant: variant;
-    handleFunction: () => void
-}
+import { ButtonCalculator } from "./@types/types";
 
 export const buttonsArray: ButtonCalculator[] = [
     {
         id: 1,
         slug: "mc",
         variant: "silver",
-        handleFunction: () => {}                
+        type: 'others'                
     },
     {
         id: 2,
         slug: "m+",
         variant: "silver",
-        handleFunction: () => {}                
+        type: 'others'               
     },
     {
         id: 3,
         slug: "m-",
         variant: "silver",
-        handleFunction: () => {}                
+        type: 'others'               
     },
     {
         id: 4,
         slug: "mr",
         variant: "silver",
-        handleFunction: () => {}                
+        type: 'others'               
     },
     {
         id: 5,
         slug: "0",
         variant: "brass",
-        handleFunction: () => {}                
+        type: 'drawable'               
     },
     {
         id: 6,
         slug: "+/-",
         variant: "brass",
-        handleFunction: () => {}                
+        type: 'others'                
     },
     {
         id: 7,
         slug: "/",
         variant: "brass",
-        handleFunction: () => {}                
+        type: 'operator'               
     },
     {
         id: 8,
         slug: "x",
         variant: "brass",
-        handleFunction: () => {}                
+        type: 'operator'               
     },
     {
         id: 9,
         slug: "7",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'               
     },
     {
         id: 10,
         slug: "8",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'                
     },
     {
         id: 11,
         slug: "9",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'                
     },
     {
         id: 12,
         slug: "-",
         variant: "brass",
-        handleFunction: () => {}                
+        type: 'operator'                
     },
     {
         id: 13,
         slug: "4",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'               
     },
     {
         id: 14,
         slug: "5",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'                
     },
     {
         id: 15,
         slug: "6",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'                
     },
     {
         id: 16,
         slug: "+",
         variant: "brass",
-        handleFunction: () => {}                
+        type: 'operator'
     },
     {
         id: 17,
         slug: "1",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'               
     },
     {
         id: 18,
         slug: "2",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'                
     },
     {
         id: 19,
         slug: "3",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'                
     },
     {
         id: 20,
         slug: "=",
         variant: "orange",
-        handleFunction: () => {}                
+        type: 'others'                
     },
     {
         id: 21,
         slug: "0",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'               
     },
     {
         id: 22,
-        slug: ",",
+        slug: ".",
         variant: "black",
-        handleFunction: () => {}                
+        type: 'drawable'                
+    },
+    {
+        id: 23,
+        slug: "C",
+        variant: "brass",
+        type: 'others'                
+    },
+    {
+        id: 24,
+        slug: "CE",
+        variant: "brass",
+        type: 'others'
     },
 ]

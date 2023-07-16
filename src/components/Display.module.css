@@ -9,12 +9,35 @@
 
     overflow: auto;
     white-space: nowrap;
+
+    position: relative;
 }
 
-span {
+.container span {
     color: var(--black-800);
     font-size: 100px;
     font-weight: bold;
 
     text-align: center;
+}
+
+.container div {
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    bottom: 43%;
+
+    padding: 1rem;
+}
+
+.container div p {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--black-800);
 }

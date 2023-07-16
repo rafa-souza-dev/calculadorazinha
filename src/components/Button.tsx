@@ -27,8 +27,6 @@ export function Button({
 
     const variantClass = getVariant(variant)
 
-    console.log(styles[variantClass])
-
     return (
         <button
             className={styles.button + " " + styles[variantClass]} 
