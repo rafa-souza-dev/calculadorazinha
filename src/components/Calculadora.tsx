@@ -31,11 +31,7 @@ export function Calculadora() {
                 return slug
             }
 
-            if (
-                !!operation.operationSymbol &&
-                !!operation.firstValue &&
-                !!operation.secondValue
-            ) {
+            if (isCompleteSetupOperation) {
                 setOperation(operationState => ({
                     ...operationState,
                     secondValue: state + slug
@@ -68,8 +64,6 @@ export function Calculadora() {
                 !!state.firstValue &&
                 !!state.secondValue
             ) {
-                console.log(state.secondValue)
-
                 setDisplayValue(operationResult)
 
                 return {
@@ -118,7 +112,21 @@ export function Calculadora() {
         if (button.type === 'operator') {
             updateOperation(button.slug)
         }
+
+        if (button.slug === '=' && isCompleteSetupOperation) {
+            setDisplayValue(operationResult)
+
+            setOperation({
+                operationSymbol: null,
+                firstValue: null,
+                secondValue: null
+            })
+        }
     }
+
+    const isCompleteSetupOperation = !!operation.operationSymbol && 
+        !!operation.firstValue &&
+        !!operation.secondValue
 
     const operationResult = calculateOperation()
 
