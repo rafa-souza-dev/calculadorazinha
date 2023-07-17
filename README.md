@@ -1,6 +1,6 @@
 # Calculadorazinha
 
-Calculadorazinha é uma aplicação web escrita em **ReactJS** usando **TypeScript**. A ideia é que a calculadora seja funcional e tenha a lógica de **Memory Buttons**.
+Calculadorazinha é uma aplicação web escrita em **ReactJS** usando **TypeScript**. A ideia é que a calculadora seja funcional e tenha a lógica de **Memory Buttons**. Sua mecânica é semelhante a de uma calculadora física, uma diferença é que no display é mostrado a operação matemática atual, se houver.
 
 ## Como rodar a aplicação
 
