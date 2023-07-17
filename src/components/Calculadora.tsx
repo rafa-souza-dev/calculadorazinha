@@ -16,6 +16,7 @@ export function Calculadora() {
         firstValue: null,
         secondValue: null
     })
+    const [memoryValue, setMemoryValue] = useState<string | null>(null)
 
     function updateDisplayValue(slug: string) {
         setDisplayValue(state => {
@@ -23,8 +24,12 @@ export function Calculadora() {
                 return state
             }
 
-            if (state === '0' && slug !== '.') {
+            if (state === '0' && slug !== '.' && !operation.operationSymbol) {
                 return slug
+            }
+
+            if (state === '0' && slug === '.') {
+                return state
             }
 
             if (state === '0' && slug === '0') {
@@ -41,9 +46,8 @@ export function Calculadora() {
             }
 
             if (
-                !!operation && 
-                !!operation.firstValue &&
-                operation.secondValue === null
+                !!operation.operationSymbol && 
+                !!operation.firstValue 
             ) {
                 setOperation(state => ({
                     ...state,
@@ -129,6 +133,7 @@ export function Calculadora() {
         !!operation.secondValue
 
     const operationResult = calculateOperation()
+    const haveDataInCalculatorMemory = !!memoryValue
 
     return (
         <div className={styles.container}>
@@ -137,6 +142,7 @@ export function Calculadora() {
                     <Display 
                         value={displayValue}
                         operation={operation.operationSymbol}
+                        haveDataInCalculatorMemory={haveDataInCalculatorMemory}
                     />
                     <div className={styles.keyboard}>
                         {buttonsArray.map(button => (
