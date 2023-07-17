@@ -164,6 +164,20 @@ export function Calculadora() {
         if (button.slug === 'mc' && haveDataInCalculatorMemory) {
             setMemoryValue(null)
         }
+
+        if (button.slug === 'C') {
+            setInitialOperationState()
+            setDisplayValue('0')
+        }
+
+        if (button.slug === 'CE' && isCompleteSetupOperation) {
+            setOperation(state => ({
+                ...state,
+                secondValue: null
+            }))
+
+            setDisplayValue('0')
+        }
     }
 
     const isCompleteSetupOperation = !!operation.operationSymbol && 
