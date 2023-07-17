@@ -108,6 +108,14 @@ export function Calculadora() {
         return ""
     }
 
+    function setInitialOperationState() {
+        setOperation({
+            operationSymbol: null,
+            firstValue: null,
+            secondValue: null
+        })
+    }
+
     function handleButtonCalculator(button: ButtonCalculator) {
         if (button.type === 'drawable') {
             updateDisplayValue(button.slug)
@@ -120,11 +128,41 @@ export function Calculadora() {
         if (button.slug === '=' && isCompleteSetupOperation) {
             setDisplayValue(operationResult)
 
-            setOperation({
-                operationSymbol: null,
-                firstValue: null,
-                secondValue: null
+            setInitialOperationState()
+        }
+
+        if (button.slug === 'm+') {
+            setInitialOperationState()
+            setDisplayValue('0')
+
+            setMemoryValue(state => {
+                const memoryValueAsNumber = Number(state)
+                const displayValueAsNumber = Number(displayValue)
+
+                return String(memoryValueAsNumber + displayValueAsNumber)
             })
+        }
+
+        if (button.slug === 'mr' && haveDataInCalculatorMemory) {
+            setInitialOperationState()
+
+            setDisplayValue(memoryValue)
+        }
+
+        if (button.slug === 'm-' && haveDataInCalculatorMemory) {
+            setInitialOperationState()
+            setDisplayValue('0')
+
+            setMemoryValue(state => {
+                const memoryValueAsNumber = Number(state)
+                const displayValueAsNumber = Number(displayValue)
+
+                return String(memoryValueAsNumber - displayValueAsNumber)
+            })
+        }
+
+        if (button.slug === 'mc' && haveDataInCalculatorMemory) {
+            setMemoryValue(null)
         }
     }
 
