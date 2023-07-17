@@ -16,7 +16,7 @@ export function Calculadora() {
         firstValue: null,
         secondValue: null
     })
-    const [memoryValue, setMemoryValue] = useState<string | null>(null)
+    const [memoryValue, setMemoryValue] = useState('0')
 
     function updateDisplayValue(slug: string) {
         setDisplayValue(state => {
@@ -162,7 +162,7 @@ export function Calculadora() {
         }
 
         if (button.slug === 'mc' && haveDataInCalculatorMemory) {
-            setMemoryValue(null)
+            setMemoryValue('0')
         }
 
         if (button.slug === 'C') {
@@ -185,7 +185,7 @@ export function Calculadora() {
         !!operation.secondValue
 
     const operationResult = calculateOperation()
-    const haveDataInCalculatorMemory = !!memoryValue
+    const haveDataInCalculatorMemory = memoryValue !== '0'
 
     return (
         <div className={styles.container}>
